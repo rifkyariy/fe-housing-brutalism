@@ -58,13 +58,13 @@ export default function RulesPage() {
           </div>
           <ul className="space-y-4 font-mono-custom text-sm text-gray-700">
             <li className="flex gap-3"><span className="text-green-600 font-bold">✓</span> Gunakan fasilitas bersama dengan bijak</li>
-            <li className="flex gap-3"><span class="text-green-600 font-bold">✓</span> Bayar sewa tepat waktu (tanggal 1-5)</li>
-            <li className="flex gap-3"><span class="text-green-600 font-bold">✓</span> Jaga kebersihan kamar & area umum</li>
-            <li className="flex gap-3"><span class="text-green-600 font-bold">✓</span> Lapor kerusakan segera</li>
-            <li className="flex gap-3"><span class="text-green-600 font-bold">✓</span> Hemat listrik saat keluar kamar</li>
-            <li className="flex gap-3"><span class="text-green-600 font-bold">✓</span> Hormati privasi tetangga</li>
-            <li className="flex gap-3"><span class="text-green-600 font-bold">✓</span> Ikuti prosedur darurat</li>
-            <li className="flex gap-3"><span class="text-green-600 font-bold">✓</span> Simpan barang berharga dengan aman</li>
+            <li className="flex gap-3"><span className="text-green-600 font-bold">✓</span> Bayar sewa tepat waktu (tanggal 1-5)</li>
+            <li className="flex gap-3"><span className="text-green-600 font-bold">✓</span> Jaga kebersihan kamar & area umum</li>
+            <li className="flex gap-3"><span className="text-green-600 font-bold">✓</span> Lapor kerusakan segera</li>
+            <li className="flex gap-3"><span className="text-green-600 font-bold">✓</span> Hemat listrik saat keluar kamar</li>
+            <li className="flex gap-3"><span className="text-green-600 font-bold">✓</span> Hormati privasi tetangga</li>
+            <li className="flex gap-3"><span className="text-green-600 font-bold">✓</span> Ikuti prosedur darurat</li>
+            <li className="flex gap-3"><span className="text-green-600 font-bold">✓</span> Simpan barang berharga dengan aman</li>
           </ul>
         </div>
         {/* Don'ts */}
@@ -75,13 +75,13 @@ export default function RulesPage() {
           </div>
           <ul className="space-y-4 font-mono-custom text-sm text-gray-700">
             <li className="flex gap-3"><span className="text-red-600 font-bold">✕</span> Buang sampah sembarangan</li>
-            <li className="flex gap-3"><span class="text-red-600 font-bold">✕</span> Simpan bahan berbahaya/mudah terbakar</li>
-            <li className="flex gap-3"><span class="text-red-600 font-bold">✕</span> Ubah instalasi listrik tanpa izin</li>
-            <li className="flex gap-3"><span class="text-red-600 font-bold">✕</span> Sublet/sewakan ulang kamar</li>
-            <li className="flex gap-3"><span class="text-red-600 font-bold">✕</span> Gandakan kunci diam-diam</li>
-            <li className="flex gap-3"><span class="text-red-600 font-bold">✕</span> Aktivitas ilegal</li>
-            <li className="flex gap-3"><span class="text-red-600 font-bold">✕</span> Merusak properti gedung</li>
-            <li className="flex gap-3"><span class="text-red-600 font-bold">✕</span> Bikin keributan</li>
+            <li className="flex gap-3"><span className="text-red-600 font-bold">✕</span> Simpan bahan berbahaya/mudah terbakar</li>
+            <li className="flex gap-3"><span className="text-red-600 font-bold">✕</span> Ubah instalasi listrik tanpa izin</li>
+            <li className="flex gap-3"><span className="text-red-600 font-bold">✕</span> Sublet/sewakan ulang kamar</li>
+            <li className="flex gap-3"><span className="text-red-600 font-bold">✕</span> Gandakan kunci diam-diam</li>
+            <li className="flex gap-3"><span className="text-red-600 font-bold">✕</span> Aktivitas ilegal</li>
+            <li className="flex gap-3"><span className="text-red-600 font-bold">✕</span> Merusak properti gedung</li>
+            <li className="flex gap-3"><span className="text-red-600 font-bold">✕</span> Bikin keributan</li>
           </ul>
         </div>
       </div>
