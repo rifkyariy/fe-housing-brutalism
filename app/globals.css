@@ -1,26 +1,131 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --habyt-green: #B8F2B8;
+  --habyt-black: #1A1A1A;
+  --habyt-gray: #F5F5F5;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--habyt-black);
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono-custom {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Hero Logic */
+.hero-container {
+  border-radius: 0;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
+  min-height: 580px;
+}
+
+.hero-green-section {
+  background-color: var(--habyt-green);
+  border-bottom-left-radius: 0; 
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .hero-green-section {
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 0;
+      min-height: 400px;
+  }
+}
+
+/* Interactive Elements */
+.btn-outline {
+  transition: all 0.2s ease;
+}
+.btn-outline:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+.city-select-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Card Zoom */
+.card-zoom-container {
+  overflow: hidden;
+}
+.card-zoom-image {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.card-zoom-container:hover .card-zoom-image {
+  transform: scale(1.05);
+}
+
+/* Custom underline animation for links */
+.nav-link {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.nav-link:hover::after, .nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Carousel Scroll Snap */
+.snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+}
+.snap-center {
+  scroll-snap-align: center;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Pagination Styles */
+.pagination-btn {
+  border: 1px solid black;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+.pagination-btn:hover:not(:disabled) {
+  background-color: black;
+  color: white;
+}
+.pagination-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Fade In Animation */
+.fade-in, .animate-fadeIn {
+  animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
