@@ -1,10 +1,17 @@
 "use client";
 import { useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Home() {
   const [isCityMenuOpen, setIsCityMenuOpen] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  const selectCity = (city: string) => {
+    setIsCityMenuOpen(false);
+    router.push(`/explore?city=${encodeURIComponent(city)}`);
+  };
 
   const scrollCarousel = (offset: number) => {
     if (carouselRef.current) {
@@ -24,24 +31,22 @@ export default function Home() {
                     <button 
                         className="text-5xl md:text-7xl font-bold flex items-center gap-4 hover:opacity-60 transition-opacity text-left leading-tight" 
                         onClick={() => setIsCityMenuOpen(!isCityMenuOpen)}
+                        aria-expanded={isCityMenuOpen}
+                        aria-controls="city-menu"
                     >
-                        Jakarta <i className="fa-solid fa-chevron-down text-2xl md:text-4xl"></i>
+                        Jakarta Pusat <i className="fa-solid fa-chevron-down text-2xl md:text-4xl"></i>
                     </button>
                     {/* Hero Dropdown */}
                     {isCityMenuOpen && (
-                        <div className="absolute top-full left-0 mt-4 w-64 bg-white border border-gray-200 rounded-none shadow-xl p-2 z-50" onMouseLeave={() => setIsCityMenuOpen(false)}>
-                            <div className="p-3 bg-gray-100 font-bold text-sm flex justify-between items-center cursor-default">
-                                <span>Jakarta</span>
+                        <div id="city-menu" tabIndex={-1} onKeyDown={(e) => { if (e.key === 'Escape') setIsCityMenuOpen(false); }} className="absolute top-full left-0 mt-4 w-64 bg-white border border-gray-200 rounded-none shadow-xl p-2 z-50" onMouseLeave={() => setIsCityMenuOpen(false)}>
+                            <button type="button" onClick={() => selectCity('Jakarta Pusat')} className="w-full p-3 bg-gray-100 font-bold text-sm flex justify-between items-center cursor-pointer text-left">
+                                <span>Jakarta Pusat</span>
                                 <span className="w-2 h-2 bg-green-500 rounded-full city-select-cursor"></span>
-                            </div>
-                            <div className="p-3 hover:bg-gray-50 text-gray-400 cursor-not-allowed text-sm flex justify-between items-center">
-                                <span>Bali</span>
-                                <span className="text-[10px] border border-gray-300 px-1 rounded">SOON</span>
-                            </div>
-                            <div className="p-3 hover:bg-gray-50 text-gray-400 cursor-not-allowed text-sm flex justify-between items-center">
-                                <span>Bandung</span>
-                                <span className="text-[10px] border border-gray-300 px-1 rounded">SOON</span>
-                            </div>
+                            </button>
+                            <button type="button" onClick={() => selectCity('Jakarta Selatan')} className="w-full p-3 bg-gray-100 font-bold text-sm flex justify-between items-center cursor-pointer text-left mt-1">
+                                <span>Jakarta Selatan</span>
+                                <span className="w-2 h-2 bg-green-500 rounded-full city-select-cursor"></span>
+                            </button>
                         </div>
                     )}
                 </div>
